@@ -167,9 +167,9 @@ body {
   min-height: 100vh;
 }
 
-/* Long sections: snap at both start and end so user can scroll through content */
-#experience {
-  scroll-snap-align: start end;
+/* Each job is a snap point so fast scrolling can't skip entries */
+#experience .job {
+  scroll-snap-align: start;
 }
 
 .hero-title {
