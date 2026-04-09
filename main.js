@@ -104,3 +104,27 @@ function initNav() {
 }
 
 document.addEventListener('DOMContentLoaded', initNav);
+
+// === Hamburger menu ===
+function initHamburger() {
+  const hamburger = document.querySelector('.hamburger');
+  const sidebar = document.querySelector('.sidebar');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  if (!hamburger || !sidebar) return;
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    sidebar.classList.toggle('open');
+  });
+
+  // Close sidebar when a nav link is clicked (mobile)
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      sidebar.classList.remove('open');
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initHamburger);
