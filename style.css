@@ -173,10 +173,11 @@ body {
 }
 
 .hero-title {
-  font-size: 72px;
+  font-size: clamp(36px, 5vw, 72px);
   font-weight: 700;
   letter-spacing: -0.5px;
   line-height: 1.15;
+  white-space: nowrap;
   margin-bottom: 14px;
   color: #ffffff;
   text-shadow: 0 0 50px rgba(180, 40, 255, 0.15), 0 0 10px rgba(200, 120, 255, 0.08), 0 1px 0 rgba(255, 255, 255, 0.06);
