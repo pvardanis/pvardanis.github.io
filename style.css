@@ -447,6 +447,7 @@ body {
   );
   transform: translate(30%, -40%);
   filter: blur(30px);
+  animation: aura-pulse 8s ease-in-out infinite;
 }
 
 .aura-center {
@@ -498,6 +499,7 @@ body {
     transparent 100%
   );
   filter: blur(6px);
+  animation: orb-breathe 6s ease-in-out infinite;
 }
 
 .orb::after {
@@ -536,6 +538,7 @@ body {
     transparent
   );
   transform: rotate(12deg);
+  animation: lightning-flicker 4s ease-in-out infinite;
 }
 
 .lightning-2 {
@@ -550,6 +553,7 @@ body {
     transparent
   );
   transform: rotate(-30deg);
+  animation: lightning-flicker 4s ease-in-out infinite 1.5s;
 }
 
 .lightning-3 {
@@ -565,6 +569,7 @@ body {
     transparent
   );
   transform: rotate(35deg);
+  animation: lightning-flicker 4s ease-in-out infinite 3s;
 }
 
 .starburst {
@@ -579,4 +584,29 @@ body {
   box-shadow:
     0 0 20px rgba(255, 240, 255, 0.6),
     0 0 40px rgba(200, 140, 255, 0.4);
+  animation: starburst-pulse 3s ease-in-out infinite;
+}
+
+/* === Animations === */
+@keyframes aura-pulse {
+  0%, 100% { opacity: 1; transform: translate(30%, -40%) scale(1); }
+  50% { opacity: 0.7; transform: translate(30%, -40%) scale(1.05); }
+}
+
+@keyframes orb-breathe {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.9); }
+}
+
+@keyframes lightning-flicker {
+  0%, 90%, 100% { opacity: 1; }
+  92% { opacity: 0; }
+  94% { opacity: 0.7; }
+  96% { opacity: 0.1; }
+  98% { opacity: 0.9; }
+}
+
+@keyframes starburst-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
 }
