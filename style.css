@@ -6,13 +6,15 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100%;
 }
 
 body {
   font-family: 'Courier New', Courier, monospace;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
+  overflow: hidden;
   background: linear-gradient(135deg, #0d0618 0%, #120a22 30%, #0a0a1a 60%, #080d12 100%);
   color: rgba(255, 255, 255, 0.7);
   background-attachment: fixed;
@@ -132,13 +134,24 @@ body {
 .content {
   margin-left: 200px;
   flex: 1;
-  padding: 36px 44px;
-  max-width: 800px;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .section {
-  min-height: 80vh;
-  padding-bottom: 80px;
+  min-height: 100vh;
+  padding: 60px 44px;
+  scroll-snap-align: start;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  max-width: 800px;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-label {
@@ -663,6 +676,9 @@ body {
 
   .content {
     margin-left: 0;
+  }
+
+  .section {
     padding: 80px 24px 36px;
   }
 

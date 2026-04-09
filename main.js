@@ -47,13 +47,14 @@ function initGrain() {
 
 document.addEventListener('DOMContentLoaded', initGrain);
 
-// === Nav active indicator ===
+// === Nav active indicator + section visibility ===
 function initNav() {
   const navLinks = document.querySelectorAll('.nav-link');
   const indicator = document.querySelector('.nav-indicator');
   const sections = document.querySelectorAll('.section');
+  const content = document.querySelector('.content');
 
-  if (!navLinks.length || !indicator || !sections.length) return;
+  if (!navLinks.length || !indicator || !sections.length || !content) return;
 
   function updateIndicator(activeLink) {
     const linkRect = activeLink.getBoundingClientRect();
@@ -71,21 +72,27 @@ function initNav() {
     });
   }
 
-  // Observe which section is in view
-  const observer = new IntersectionObserver(
+  // Observe sections for visibility (fade in/out) and active nav tracking
+  const visibilityObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
           setActiveLink(entry.target.id);
+        } else {
+          entry.target.classList.remove('visible');
         }
       });
     },
-    { rootMargin: '-20% 0px -60% 0px' }
+    {
+      root: content,
+      threshold: 0.3
+    }
   );
 
-  sections.forEach(section => observer.observe(section));
+  sections.forEach(section => visibilityObserver.observe(section));
 
-  // Click handling — smooth scroll
+  // Click handling — smooth scroll within content container
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -97,9 +104,12 @@ function initNav() {
     });
   });
 
-  // Set initial position
+  // Set initial state — first section visible
   if (navLinks[0]) {
     updateIndicator(navLinks[0]);
+  }
+  if (sections[0]) {
+    sections[0].classList.add('visible');
   }
 }
 
