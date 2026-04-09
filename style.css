@@ -136,10 +136,11 @@ body {
   flex: 1;
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
 }
 
 .section {
+  min-height: 100vh;
   padding: 60px 44px;
   scroll-snap-align: start;
   opacity: 0;
@@ -161,8 +162,14 @@ body {
 }
 
 /* === Profile === */
+/* Profile fills viewport as landing hero */
 #profile {
   min-height: 100vh;
+}
+
+/* Long sections: snap at both start and end so user can scroll through content */
+#experience {
+  scroll-snap-align: start end;
 }
 
 .hero-title {
