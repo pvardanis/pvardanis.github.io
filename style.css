@@ -13,6 +13,9 @@ body {
   font-family: 'Courier New', Courier, monospace;
   min-height: 100vh;
   display: flex;
+  background: linear-gradient(135deg, #0d0618 0%, #120a22 30%, #0a0a1a 60%, #080d12 100%);
+  color: rgba(255, 255, 255, 0.55);
+  background-attachment: fixed;
 }
 
 /* === Sidebar === */
@@ -26,6 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   z-index: 10;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .sidebar-identity {
@@ -37,6 +41,8 @@ body {
   font-weight: 700;
   letter-spacing: 2px;
   line-height: 1.3;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(200, 100, 255, 0.2);
 }
 
 .sidebar-accent {
@@ -50,6 +56,8 @@ body {
   display: block;
   width: 24px;
   height: 2px;
+  background: linear-gradient(90deg, #c040ff, #8000ff);
+  box-shadow: 0 0 10px rgba(180, 0, 255, 0.4);
 }
 
 .accent-dot {
@@ -57,6 +65,8 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
+  background: rgba(0, 255, 119, 0.25);
+  box-shadow: 0 0 10px rgba(0, 255, 119, 0.2);
 }
 
 /* Nav list */
@@ -75,6 +85,17 @@ body {
   letter-spacing: 4px;
   text-decoration: none;
   transition: color 0.3s, text-shadow 0.3s;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 10px rgba(200, 60, 255, 0.2);
+}
+
+.nav-link.active {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(200, 60, 255, 0.3);
 }
 
 /* Sliding indicator — positioned absolutely within nav list */
@@ -84,6 +105,8 @@ body {
   width: 2px;
   height: 33px;
   transition: top 0.3s ease;
+  background: #c040ff;
+  box-shadow: 0 0 8px rgba(192, 64, 255, 0.5);
 }
 
 .sidebar-footer {
@@ -95,11 +118,14 @@ body {
 
 .footer-glyph {
   font-size: 20px;
+  color: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 10px rgba(180, 0, 255, 0.1);
 }
 
 .footer-label {
   font-size: 7px;
   letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.15);
 }
 
 /* === Main content === */
@@ -119,6 +145,7 @@ body {
   font-size: 8px;
   letter-spacing: 8px;
   margin-bottom: 28px;
+  color: rgba(176, 96, 255, 0.18);
 }
 
 /* === Profile === */
@@ -128,12 +155,15 @@ body {
   letter-spacing: -0.5px;
   line-height: 1.15;
   margin-bottom: 14px;
+  color: #ffffff;
+  text-shadow: 0 0 50px rgba(180, 40, 255, 0.15), 0 0 10px rgba(200, 120, 255, 0.08), 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .hero-tags {
   font-size: 10px;
   letter-spacing: 3px;
   margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .separator {
@@ -147,6 +177,7 @@ body {
   display: block;
   width: 45px;
   height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), transparent);
 }
 
 .sep-dot {
@@ -154,6 +185,8 @@ body {
   width: 5px;
   height: 5px;
   border-radius: 50%;
+  background: rgba(0, 255, 119, 0.3);
+  box-shadow: 0 0 8px rgba(0, 255, 119, 0.25);
 }
 
 .hero-summary {
@@ -176,6 +209,28 @@ body {
   text-decoration: none;
   font-family: 'Courier New', Courier, monospace;
   transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.link-btn:hover {
+  border-color: rgba(200, 80, 255, 0.35);
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(180, 40, 255, 0.06);
+  box-shadow: 0 0 15px rgba(180, 0, 255, 0.08);
+}
+
+.link-btn--green {
+  border-color: rgba(0, 255, 120, 0.2);
+  color: rgba(0, 255, 119, 0.35);
+  background: rgba(0, 255, 120, 0.04);
+}
+
+.link-btn--green:hover {
+  border-color: rgba(0, 255, 120, 0.35);
+  color: rgba(0, 255, 119, 0.55);
+  box-shadow: 0 0 12px rgba(0, 255, 120, 0.06);
 }
 
 /* === Experience === */
@@ -184,6 +239,8 @@ body {
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 0 0 30px rgba(180, 40, 255, 0.1);
 }
 
 .job {
@@ -194,27 +251,32 @@ body {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.5px;
+  color: #ffffff;
 }
 
 .job-company {
   font-size: 13px;
   margin-top: 4px;
+  color: rgba(192, 128, 255, 0.5);
 }
 
 .job-note {
   font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .job-meta {
   font-size: 10px;
   letter-spacing: 1px;
   margin-top: 4px;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .job-desc {
   font-size: 11px;
   font-style: italic;
   margin-top: 8px;
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .job-bullets {
@@ -235,6 +297,7 @@ body {
   content: '—';
   position: absolute;
   left: -8px;
+  color: rgba(192, 64, 255, 0.4);
 }
 
 /* === Education === */
@@ -247,12 +310,14 @@ body {
 .edu-name {
   font-size: 13px;
   font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .edu-meta {
   font-size: 10px;
   letter-spacing: 1px;
   margin-top: 4px;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* === Skills === */
@@ -267,6 +332,7 @@ body {
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 6px;
+  color: rgba(192, 64, 255, 0.5);
 }
 
 .skill-values {
@@ -278,23 +344,28 @@ body {
 .project-card {
   padding: 28px;
   border: 1px solid;
+  border-color: rgba(180, 0, 255, 0.15);
+  background: rgba(180, 0, 255, 0.03);
 }
 
 .project-name {
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.5px;
+  color: #ffffff;
 }
 
 .project-subtitle {
   font-size: 12px;
   margin-top: 4px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .project-meta {
   font-size: 10px;
   letter-spacing: 1px;
   margin-top: 8px;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .project-desc {
@@ -315,6 +386,8 @@ body {
   letter-spacing: 2px;
   padding: 4px 10px;
   border: 1px solid;
+  color: rgba(192, 64, 255, 0.5);
+  border-color: rgba(180, 0, 255, 0.15);
 }
 
 .project-links {
@@ -328,6 +401,7 @@ body {
   font-size: 13px;
   line-height: 1.9;
   max-width: 480px;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* === Atmosphere (positioned, unstyled until Task 5) === */
