@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
   display: flex;
   background: linear-gradient(135deg, #0d0618 0%, #120a22 30%, #0a0a1a 60%, #080d12 100%);
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.7);
   background-attachment: fixed;
 }
 
@@ -81,11 +81,11 @@ body {
 .nav-link {
   display: block;
   padding: 9px 0 9px 14px;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 4px;
   text-decoration: none;
   transition: color 0.3s, text-shadow 0.3s;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .nav-link:hover {
@@ -150,7 +150,7 @@ body {
 
 /* === Profile === */
 .hero-title {
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 700;
   letter-spacing: -0.5px;
   line-height: 1.15;
@@ -160,10 +160,10 @@ body {
 }
 
 .hero-tags {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 3px;
   margin-bottom: 28px;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .separator {
@@ -190,7 +190,7 @@ body {
 }
 
 .hero-summary {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.9;
   max-width: 480px;
 }
@@ -204,7 +204,7 @@ body {
 
 .link-btn {
   padding: 8px 18px;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 3px;
   text-decoration: none;
   font-family: 'Courier New', Courier, monospace;
@@ -235,7 +235,7 @@ body {
 
 /* === Experience === */
 .section-title {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 40px;
@@ -248,16 +248,16 @@ body {
 }
 
 .job-title {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #ffffff;
 }
 
 .job-company {
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 4px;
-  color: rgba(192, 128, 255, 0.5);
+  color: rgba(192, 128, 255, 0.65);
 }
 
 .job-note {
@@ -266,17 +266,17 @@ body {
 }
 
 .job-meta {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 1px;
   margin-top: 4px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .job-desc {
-  font-size: 11px;
+  font-size: 12px;
   font-style: italic;
   margin-top: 8px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .job-bullets {
@@ -286,7 +286,7 @@ body {
 }
 
 .job-bullets li {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.8;
   margin-bottom: 8px;
   padding-left: 12px;
@@ -308,16 +308,16 @@ body {
 }
 
 .edu-name {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.8);
 }
 
 .edu-meta {
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 1px;
   margin-top: 4px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 /* === Skills === */
@@ -328,7 +328,7 @@ body {
 }
 
 .skill-label {
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -336,7 +336,7 @@ body {
 }
 
 .skill-values {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.6;
 }
 
@@ -349,16 +349,16 @@ body {
 }
 
 .project-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #ffffff;
 }
 
 .project-subtitle {
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 4px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .project-meta {
@@ -369,7 +369,7 @@ body {
 }
 
 .project-desc {
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.8;
   margin-top: 16px;
 }
@@ -398,7 +398,7 @@ body {
 
 /* === About === */
 .about-text {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.9;
   max-width: 480px;
   color: rgba(255, 255, 255, 0.55);
