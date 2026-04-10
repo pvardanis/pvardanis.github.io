@@ -333,6 +333,13 @@ body {
   color: rgba(192, 64, 255, 0.4);
 }
 
+.job-tags {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 /* === Education === */
 .education-list {
   display: flex;
