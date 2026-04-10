@@ -438,6 +438,15 @@ a.edu-name:hover {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.project-meta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-meta a:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .project-desc {
   font-size: 21px;
   line-height: 1.8;
