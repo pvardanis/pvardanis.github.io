@@ -697,8 +697,25 @@ a.edu-name:hover {
   }
 
   .section {
-    padding: 80px 20px 36px;
+    padding: 60px 20px 36px;
     max-width: 100%;
+    min-height: auto;
+    scroll-snap-align: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .content {
+    scroll-snap-type: none;
+  }
+
+  #experience .job {
+    scroll-snap-align: none;
+  }
+
+  #profile {
+    padding-top: 80px;
+    min-height: auto;
   }
 
   .hero-title {
