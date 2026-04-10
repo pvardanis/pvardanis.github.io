@@ -744,6 +744,7 @@ a.edu-name:hover {
 
   .job-tags {
     width: auto;
+    margin-left: 28px;
   }
 
   #profile {
