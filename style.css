@@ -340,6 +340,15 @@ body {
   color: rgba(192, 64, 255, 0.4);
 }
 
+.job-bullets a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.job-bullets a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
 .job-tags {
   width: 340px;
   flex-shrink: 0;
