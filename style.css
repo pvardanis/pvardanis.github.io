@@ -346,9 +346,8 @@ body {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  align-self: flex-start;
+  align-content: flex-start;
+  align-self: center;
   position: sticky;
   top: 80px;
 }
