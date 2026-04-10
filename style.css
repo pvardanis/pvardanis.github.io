@@ -699,7 +699,7 @@ a.edu-name:hover {
   .section {
     padding: 60px 20px 36px;
     max-width: 100%;
-    min-height: auto;
+    min-height: 100vh;
     scroll-snap-align: none;
     opacity: 1;
     transform: none;
