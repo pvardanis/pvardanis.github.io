@@ -155,34 +155,70 @@ function initJobTags() {
 
   let activeJob = null;
 
+  // Track which jobs are currently visible and pick the one
+  // closest to the top of the viewport as the active one
+  const visibleJobs = new Set();
+
   const observer = new IntersectionObserver(
     (entries) => {
-      // Find the most visible job
-      let bestEntry = null;
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          if (!bestEntry || entry.intersectionRatio > bestEntry.intersectionRatio) {
-            bestEntry = entry;
-          }
+          visibleJobs.add(entry.target);
+        } else {
+          visibleJobs.delete(entry.target);
         }
       });
 
-      if (bestEntry && bestEntry.target !== activeJob) {
-        // Remove animation from previous job
+      // Of all visible jobs, pick the one closest to the top
+      let closest = null;
+      let closestTop = Infinity;
+      visibleJobs.forEach(job => {
+        const rect = job.getBoundingClientRect();
+        const top = Math.abs(rect.top);
+        if (top < closestTop) {
+          closestTop = top;
+          closest = job;
+        }
+      });
+
+      if (closest && closest !== activeJob) {
         if (activeJob) {
           const prevTags = activeJob.querySelector('.job-tags');
           if (prevTags) prevTags.classList.remove('animate');
         }
-        // Animate new job
-        activeJob = bestEntry.target;
+        activeJob = closest;
         const newTags = activeJob.querySelector('.job-tags');
         if (newTags) newTags.classList.add('animate');
       }
     },
-    { root: content, threshold: [0.1, 0.3, 0.5, 0.7] }
+    { root: content, threshold: 0 }
   );
 
   jobs.forEach(job => observer.observe(job));
+
+  // Re-evaluate on scroll to catch mid-scroll transitions
+  content.addEventListener('scroll', () => {
+    let closest = null;
+    let closestTop = Infinity;
+    visibleJobs.forEach(job => {
+      const rect = job.getBoundingClientRect();
+      const top = Math.abs(rect.top);
+      if (top < closestTop) {
+        closestTop = top;
+        closest = job;
+      }
+    });
+
+    if (closest && closest !== activeJob) {
+      if (activeJob) {
+        const prevTags = activeJob.querySelector('.job-tags');
+        if (prevTags) prevTags.classList.remove('animate');
+      }
+      activeJob = closest;
+      const newTags = activeJob.querySelector('.job-tags');
+      if (newTags) newTags.classList.add('animate');
+    }
+  }, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', initJobTags);
