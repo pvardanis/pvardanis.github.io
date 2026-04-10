@@ -196,13 +196,18 @@ function initJobTags() {
 
   jobs.forEach(job => observer.observe(job));
 
-  // Re-evaluate on scroll to catch mid-scroll transitions
-  content.addEventListener('scroll', () => {
+  // Re-evaluate on scroll to catch mid-scroll transitions and fade jobs
+  const contentRect = content.getBoundingClientRect();
+
+  function updateJobs() {
+    const viewH = contentRect.height;
+
+    // Tag switching
     let closest = null;
     let closestTop = Infinity;
     visibleJobs.forEach(job => {
       const rect = job.getBoundingClientRect();
-      const top = Math.abs(rect.top);
+      const top = Math.abs(rect.top - contentRect.top);
       if (top < closestTop) {
         closestTop = top;
         closest = job;
@@ -218,7 +223,35 @@ function initJobTags() {
       const newTags = activeJob.querySelector('.job-tags');
       if (newTags) newTags.classList.add('animate');
     }
-  }, { passive: true });
+
+    // Job content fade based on position in viewport
+    jobs.forEach(job => {
+      const rect = job.getBoundingClientRect();
+      const jobContent = job.querySelector('.job-content');
+      if (!jobContent) return;
+
+      const top = rect.top - contentRect.top;
+      const bottom = rect.bottom - contentRect.top;
+
+      // Fully visible when job top is near viewport top
+      // Fade out as job scrolls away (top goes negative)
+      // Fade in as job enters (top comes down from bottom)
+      let opacity = 1;
+      const fadeZone = viewH * 0.35;
+
+      if (top < 0) {
+        // Scrolling away upward
+        opacity = Math.max(0.15, 1 + top / fadeZone);
+      } else if (top > viewH - fadeZone) {
+        // Entering from below
+        opacity = Math.max(0.15, (viewH - top) / fadeZone);
+      }
+
+      jobContent.style.opacity = opacity;
+    });
+  }
+
+  content.addEventListener('scroll', updateJobs, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', initJobTags);
