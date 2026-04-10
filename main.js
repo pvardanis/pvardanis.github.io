@@ -79,8 +79,6 @@ function initNav() {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           setActiveLink(entry.target.id);
-        } else {
-          entry.target.classList.remove('visible');
         }
       });
     },
