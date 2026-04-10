@@ -352,6 +352,17 @@ body {
   top: 30vh;
 }
 
+.job-tags .tag {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.job-tags.animate .tag {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* === Education === */
 .education-list {
   display: flex;

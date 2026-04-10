@@ -138,3 +138,37 @@ function initHamburger() {
 }
 
 document.addEventListener('DOMContentLoaded', initHamburger);
+
+// === Job tags domino animation ===
+function initJobTags() {
+  const content = document.querySelector('.content');
+  const jobs = document.querySelectorAll('.job');
+  if (!content || !jobs.length) return;
+
+  // Set staggered transition-delay on each tag
+  jobs.forEach(job => {
+    const tags = job.querySelectorAll('.job-tags .tag');
+    tags.forEach((tag, i) => {
+      tag.style.transitionDelay = (i * 40) + 'ms';
+    });
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        const tagContainer = entry.target.querySelector('.job-tags');
+        if (!tagContainer) return;
+        if (entry.isIntersecting) {
+          tagContainer.classList.add('animate');
+        } else {
+          tagContainer.classList.remove('animate');
+        }
+      });
+    },
+    { root: content, threshold: 0.1 }
+  );
+
+  jobs.forEach(job => observer.observe(job));
+}
+
+document.addEventListener('DOMContentLoaded', initJobTags);
