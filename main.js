@@ -86,7 +86,7 @@ function initNav() {
     },
     {
       root: content,
-      threshold: 0.3
+      threshold: 0.05
     }
   );
 
