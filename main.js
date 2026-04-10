@@ -224,24 +224,6 @@ function initJobTags() {
       if (newTags) newTags.classList.add('animate');
     }
 
-    // Job content fade based on position in viewport
-    jobs.forEach(job => {
-      const rect = job.getBoundingClientRect();
-      const jobContent = job.querySelector('.job-content');
-      if (!jobContent) return;
-
-      const top = rect.top - contentRect.top;
-      const fadeZone = viewH * 0.12;
-      let opacity = 1;
-
-      if (top < 0) {
-        opacity = Math.max(0.05, 1 + top / fadeZone);
-      } else if (top > viewH - fadeZone) {
-        opacity = Math.max(0.05, (viewH - top) / fadeZone);
-      }
-
-      jobContent.style.opacity = opacity;
-    });
   }
 
   content.addEventListener('scroll', updateJobs, { passive: true });
@@ -249,32 +231,3 @@ function initJobTags() {
 
 document.addEventListener('DOMContentLoaded', initJobTags);
 
-// === Section scroll fade ===
-function initSectionFade() {
-  const content = document.querySelector('.content');
-  const sections = document.querySelectorAll('.section');
-  if (!content || !sections.length) return;
-
-  const contentRect = content.getBoundingClientRect();
-
-  content.addEventListener('scroll', () => {
-    const viewH = contentRect.height;
-    const fadeZone = viewH * 0.12;
-
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
-      const top = rect.top - contentRect.top;
-      let opacity = 1;
-
-      if (top < 0) {
-        opacity = Math.max(0.05, 1 + top / fadeZone);
-      } else if (top > viewH - fadeZone) {
-        opacity = Math.max(0.05, (viewH - top) / fadeZone);
-      }
-
-      section.style.opacity = opacity;
-    });
-  }, { passive: true });
-}
-
-document.addEventListener('DOMContentLoaded', initSectionFade);
