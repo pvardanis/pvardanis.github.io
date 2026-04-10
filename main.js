@@ -153,19 +153,33 @@ function initJobTags() {
     });
   });
 
+  let activeJob = null;
+
   const observer = new IntersectionObserver(
     (entries) => {
+      // Find the most visible job
+      let bestEntry = null;
       entries.forEach(entry => {
-        const tagContainer = entry.target.querySelector('.job-tags');
-        if (!tagContainer) return;
         if (entry.isIntersecting) {
-          tagContainer.classList.add('animate');
-        } else {
-          tagContainer.classList.remove('animate');
+          if (!bestEntry || entry.intersectionRatio > bestEntry.intersectionRatio) {
+            bestEntry = entry;
+          }
         }
       });
+
+      if (bestEntry && bestEntry.target !== activeJob) {
+        // Remove animation from previous job
+        if (activeJob) {
+          const prevTags = activeJob.querySelector('.job-tags');
+          if (prevTags) prevTags.classList.remove('animate');
+        }
+        // Animate new job
+        activeJob = bestEntry.target;
+        const newTags = activeJob.querySelector('.job-tags');
+        if (newTags) newTags.classList.add('animate');
+      }
     },
-    { root: content, threshold: 0.1 }
+    { root: content, threshold: [0.1, 0.3, 0.5, 0.7] }
   );
 
   jobs.forEach(job => observer.observe(job));
