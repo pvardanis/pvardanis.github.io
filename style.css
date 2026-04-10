@@ -697,7 +697,7 @@ a.edu-name:hover {
   }
 
   .section {
-    padding: 60px 20px 36px;
+    padding: 80px 20px 36px;
     max-width: 100%;
     min-height: 100vh;
     scroll-snap-align: none;
@@ -714,7 +714,6 @@ a.edu-name:hover {
   }
 
   #profile {
-    padding-top: 80px;
     min-height: auto;
   }
 
