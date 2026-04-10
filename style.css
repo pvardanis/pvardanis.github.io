@@ -347,9 +347,9 @@ body {
   gap: 8px;
   flex-wrap: wrap;
   align-content: flex-start;
-  align-self: center;
+  align-self: flex-start;
   position: sticky;
-  top: 80px;
+  top: 30vh;
 }
 
 /* === Education === */
