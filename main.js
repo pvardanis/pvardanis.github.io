@@ -231,20 +231,13 @@ function initJobTags() {
       if (!jobContent) return;
 
       const top = rect.top - contentRect.top;
-      const bottom = rect.bottom - contentRect.top;
-
-      // Fully visible when job top is near viewport top
-      // Fade out as job scrolls away (top goes negative)
-      // Fade in as job enters (top comes down from bottom)
+      const fadeZone = viewH * 0.12;
       let opacity = 1;
-      const fadeZone = viewH * 0.35;
 
       if (top < 0) {
-        // Scrolling away upward
-        opacity = Math.max(0.15, 1 + top / fadeZone);
+        opacity = Math.max(0.05, 1 + top / fadeZone);
       } else if (top > viewH - fadeZone) {
-        // Entering from below
-        opacity = Math.max(0.15, (viewH - top) / fadeZone);
+        opacity = Math.max(0.05, (viewH - top) / fadeZone);
       }
 
       jobContent.style.opacity = opacity;
@@ -255,3 +248,33 @@ function initJobTags() {
 }
 
 document.addEventListener('DOMContentLoaded', initJobTags);
+
+// === Section scroll fade ===
+function initSectionFade() {
+  const content = document.querySelector('.content');
+  const sections = document.querySelectorAll('.section');
+  if (!content || !sections.length) return;
+
+  const contentRect = content.getBoundingClientRect();
+
+  content.addEventListener('scroll', () => {
+    const viewH = contentRect.height;
+    const fadeZone = viewH * 0.12;
+
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const top = rect.top - contentRect.top;
+      let opacity = 1;
+
+      if (top < 0) {
+        opacity = Math.max(0.05, 1 + top / fadeZone);
+      } else if (top > viewH - fadeZone) {
+        opacity = Math.max(0.05, (viewH - top) / fadeZone);
+      }
+
+      section.style.opacity = opacity;
+    });
+  }, { passive: true });
+}
+
+document.addEventListener('DOMContentLoaded', initSectionFade);
