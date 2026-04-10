@@ -269,6 +269,13 @@ body {
 
 .job {
   margin-bottom: 48px;
+  display: flex;
+  gap: 32px;
+}
+
+.job-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .job-title {
@@ -334,10 +341,12 @@ body {
 }
 
 .job-tags {
-  margin-top: 16px;
+  width: 220px;
+  flex-shrink: 0;
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 /* === Education === */
@@ -727,6 +736,11 @@ a.edu-name:hover {
 
   #experience .job {
     scroll-snap-align: none;
+    flex-direction: column;
+  }
+
+  .job-tags {
+    width: auto;
   }
 
   #profile {

@@ -79,20 +79,22 @@
       <h2 class="section-title">Experience</h2>
 
       <div class="job">
-        <div class="job-header">
-          <h3 class="job-title">Senior MLOps Engineer</h3>
-          <div class="job-company">Wallaroo.AI <a href="https://wallaroo.ai/" target="_blank" rel="noopener">↗</a></div>
-          <div class="job-meta">Berlin, DE · February 2023 — June 2025</div>
-          <div class="job-desc">Wallaroo.AI empowers enterprise AI teams to deploy, observe, test, and optimize ML from the cloud to the edge with efficiency, scale, and ease</div>
+        <div class="job-content">
+          <div class="job-header">
+            <h3 class="job-title">Senior MLOps Engineer</h3>
+            <div class="job-company">Wallaroo.AI <a href="https://wallaroo.ai/" target="_blank" rel="noopener">↗</a></div>
+            <div class="job-meta">Berlin, DE · February 2023 — June 2025</div>
+            <div class="job-desc">Wallaroo.AI empowers enterprise AI teams to deploy, observe, test, and optimize ML from the cloud to the edge with efficiency, scale, and ease</div>
+          </div>
+          <ul class="job-bullets">
+            <li>Architected a Python library that streamlined low-code ML model deployment on CPU &amp; GPU, supporting PyTorch, HuggingFace, Scikit-Learn, XGBoost, ONNX, and custom implementations (BYOP) with minimal user input</li>
+            <li>Migrated inference protocol from REST to gRPC using Arrow Flight RPC, delivering up to ~3x latency reduction for Audio &amp; CV domains</li>
+            <li>Built an automatic ONNX conversion mechanism that increased native ONNX model coverage on the Rust engine by 60%, achieving up to ~15x faster inference and lower resource consumption</li>
+            <li>Integrated hardware-accelerated inference for Ampere, Intel, and Qualcomm, achieving up to 10x speedup</li>
+            <li>Maintained and enhanced a Rust-based model observability component for data drift monitoring on historical and scheduled future data</li>
+            <li>Integrated vLLM with in-house Arrow Flight RPC server for LLM serving with continuous batching and token streaming — ~1.5s latency / ~550 output tok/s at 4 QPS, ~12.5 output qps / ~1550 output tok/s at saturation for Llama 3.1 8B on a single NVIDIA H100</li>
+          </ul>
         </div>
-        <ul class="job-bullets">
-          <li>Architected a Python library that streamlined low-code ML model deployment on CPU &amp; GPU, supporting PyTorch, HuggingFace, Scikit-Learn, XGBoost, ONNX, and custom implementations (BYOP) with minimal user input</li>
-          <li>Migrated inference protocol from REST to gRPC using Arrow Flight RPC, delivering up to ~3x latency reduction for Audio &amp; CV domains</li>
-          <li>Built an automatic ONNX conversion mechanism that increased native ONNX model coverage on the Rust engine by 60%, achieving up to ~15x faster inference and lower resource consumption</li>
-          <li>Integrated hardware-accelerated inference for Ampere, Intel, and Qualcomm, achieving up to 10x speedup</li>
-          <li>Maintained and enhanced a Rust-based model observability component for data drift monitoring on historical and scheduled future data</li>
-          <li>Integrated vLLM with in-house Arrow Flight RPC server for LLM serving with continuous batching and token streaming — ~1.5s latency / ~550 output tok/s at 4 QPS, ~12.5 output qps / ~1550 output tok/s at saturation for Llama 3.1 8B on a single NVIDIA H100</li>
-        </ul>
         <div class="job-tags">
           <span class="tag">Software Development</span>
           <span class="tag">Python</span>
@@ -127,18 +129,20 @@
       </div>
 
       <div class="job">
-        <div class="job-header">
-          <h3 class="job-title">Senior MLOps Engineer</h3>
-          <div class="job-company">Utopia Music</div>
-          <div class="job-meta">Berlin, DE · October 2021 — January 2023</div>
-          <div class="job-desc">Services and tools to distribute music, enrich metadata, process royalties, manage releases, monitor and grow music consumption</div>
+        <div class="job-content">
+          <div class="job-header">
+            <h3 class="job-title">Senior MLOps Engineer</h3>
+            <div class="job-company">Utopia Music</div>
+            <div class="job-meta">Berlin, DE · October 2021 — January 2023</div>
+            <div class="job-desc">Services and tools to distribute music, enrich metadata, process royalties, manage releases, monitor and grow music consumption</div>
+          </div>
+          <ul class="job-bullets">
+            <li>Founded the MLOps function as its first member; built a Python framework for the end&#8209;to&#8209;end ML lifecycle (training, evaluation, serving) via declarative configuration, adopted enterprise-wide by data science teams</li>
+            <li>Designed and implemented a tool-agnostic experiment tracking library with declarative logging; deployed MLflow Tracking on GCP using Terraform/Terragrunt</li>
+            <li>Built model deployment infrastructure from scratch using BentoML &amp; Yatai on GKE, serving multiple data science teams</li>
+            <li>Led knowledge sharing on Clean Code, SOLID, TDD, BDD, and IaC through workshops, code reviews, and mentoring across engineering levels</li>
+          </ul>
         </div>
-        <ul class="job-bullets">
-          <li>Founded the MLOps function as its first member; built a Python framework for the end&#8209;to&#8209;end ML lifecycle (training, evaluation, serving) via declarative configuration, adopted enterprise-wide by data science teams</li>
-          <li>Designed and implemented a tool-agnostic experiment tracking library with declarative logging; deployed MLflow Tracking on GCP using Terraform/Terragrunt</li>
-          <li>Built model deployment infrastructure from scratch using BentoML &amp; Yatai on GKE, serving multiple data science teams</li>
-          <li>Led knowledge sharing on Clean Code, SOLID, TDD, BDD, and IaC through workshops, code reviews, and mentoring across engineering levels</li>
-        </ul>
         <div class="job-tags">
           <span class="tag">Software Development</span>
           <span class="tag">Python</span>
@@ -169,15 +173,17 @@
       </div>
 
       <div class="job">
-        <div class="job-header">
-          <h3 class="job-title">Machine Learning Engineer</h3>
-          <div class="job-company">Musimap SA <a href="https://app.musimap.com/en/" target="_blank" rel="noopener">↗</a> <span class="job-note">(acquired by Utopia Music)</span></div>
-          <div class="job-meta">Berlin, DE · June 2021 — September 2021</div>
-          <div class="job-desc">Musimap adds value to your music catalogs and delivers knowledge on your music listeners</div>
+        <div class="job-content">
+          <div class="job-header">
+            <h3 class="job-title">Machine Learning Engineer</h3>
+            <div class="job-company">Musimap SA <a href="https://app.musimap.com/en/" target="_blank" rel="noopener">↗</a> <span class="job-note">(acquired by Utopia Music)</span></div>
+            <div class="job-meta">Berlin, DE · June 2021 — September 2021</div>
+            <div class="job-desc">Musimap adds value to your music catalogs and delivers knowledge on your music listeners</div>
+          </div>
+          <ul class="job-bullets">
+            <li>Designed and implemented core components of Utopia Discover, a music recommendation product: REST APIs, Approximate Nearest Neighbor search, user interaction store, pre/post-processing services, and internal Python libraries for model training, evaluation, and serving</li>
+          </ul>
         </div>
-        <ul class="job-bullets">
-          <li>Designed and implemented core components of Utopia Discover, a music recommendation product: REST APIs, Approximate Nearest Neighbor search, user interaction store, pre/post-processing services, and internal Python libraries for model training, evaluation, and serving</li>
-        </ul>
         <div class="job-tags">
           <span class="tag">Software Development</span>
           <span class="tag">Python</span>
@@ -201,16 +207,18 @@
       </div>
 
       <div class="job">
-        <div class="job-header">
-          <h3 class="job-title">Data Scientist</h3>
-          <div class="job-company">Loudly GmbH <a href="https://www.loudly.com/" target="_blank" rel="noopener">↗</a></div>
-          <div class="job-meta">Berlin, DE · May 2020 — May 2021</div>
-          <div class="job-desc">Create, customize and discover music with the power of AI</div>
+        <div class="job-content">
+          <div class="job-header">
+            <h3 class="job-title">Data Scientist</h3>
+            <div class="job-company">Loudly GmbH <a href="https://www.loudly.com/" target="_blank" rel="noopener">↗</a></div>
+            <div class="job-meta">Berlin, DE · May 2020 — May 2021</div>
+            <div class="job-desc">Create, customize and discover music with the power of AI</div>
+          </div>
+          <ul class="job-bullets">
+            <li>Improved music generation and recommendation systems by refining GAN architectures for audio inpainting, building music similarity embeddings, and developing an auto-tagging system</li>
+            <li>Rebuilt the ETL pipeline from scratch, improving training data quality and reliability</li>
+          </ul>
         </div>
-        <ul class="job-bullets">
-          <li>Improved music generation and recommendation systems by refining GAN architectures for audio inpainting, building music similarity embeddings, and developing an auto-tagging system</li>
-          <li>Rebuilt the ETL pipeline from scratch, improving training data quality and reliability</li>
-        </ul>
         <div class="job-tags">
           <span class="tag">Software Development</span>
           <span class="tag">Python</span>
