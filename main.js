@@ -70,6 +70,7 @@ function initNav() {
       link.classList.toggle('active', isActive);
       if (isActive) updateIndicator(link);
     });
+    history.replaceState(null, '', '#' + id);
   }
 
   // Observe sections for visibility (fade in/out) and active nav tracking
@@ -102,12 +103,20 @@ function initNav() {
     });
   });
 
-  // Set initial state — first section visible
-  if (navLinks[0]) {
-    updateIndicator(navLinks[0]);
-  }
-  if (sections[0]) {
-    sections[0].classList.add('visible');
+  // Set initial state — restore from hash or default to first section
+  const hash = window.location.hash.slice(1);
+  const hashTarget = hash && document.getElementById(hash);
+  if (hashTarget) {
+    hashTarget.classList.add('visible');
+    hashTarget.scrollIntoView();
+    setActiveLink(hash);
+  } else {
+    if (navLinks[0]) {
+      updateIndicator(navLinks[0]);
+    }
+    if (sections[0]) {
+      sections[0].classList.add('visible');
+    }
   }
 }
 
