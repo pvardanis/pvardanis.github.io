@@ -104,6 +104,10 @@ function initNav() {
   });
 
   // Set initial state — restore from hash or default to first section
+  // Suppress transitions on load so there's no visible flash
+  sections.forEach(s => s.style.transition = 'none');
+  indicator.style.transition = 'none';
+
   const hash = window.location.hash.slice(1);
   const hashTarget = hash && document.getElementById(hash);
   if (hashTarget) {
@@ -118,6 +122,12 @@ function initNav() {
       sections[0].classList.add('visible');
     }
   }
+
+  // Re-enable transitions after the initial paint
+  requestAnimationFrame(() => {
+    sections.forEach(s => s.style.transition = '');
+    indicator.style.transition = '';
+  });
 }
 
 document.addEventListener('DOMContentLoaded', initNav);
