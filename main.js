@@ -85,11 +85,12 @@ function initNav() {
     });
   });
 
-  // Suppress transitions on load so there's no visible flash
+  // Suppress ALL transitions on load so there's no visible flash
   sections.forEach(s => s.style.transition = 'none');
   indicator.style.transition = 'none';
+  navLinks.forEach(link => link.style.transition = 'none');
 
-  // Clear the hardcoded active class from HTML before any rendering
+  // Clear active class before any rendering
   navLinks.forEach(link => link.classList.remove('active'));
 
   // Restore exact scroll position from previous session, or default to top
@@ -115,28 +116,34 @@ function initNav() {
     }
   }
 
-  // Start observing sections only after scroll position is restored,
-  // so the observer doesn't flash the indicator to profile first
+  // Defer observer start: double-rAF ensures the restored state is fully
+  // painted before the observer fires its initial batch of callbacks
+  let observerReady = false;
   requestAnimationFrame(() => {
-    const visibilityObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            setActiveLink(entry.target.id);
-          }
-        });
-      },
-      {
-        root: content,
-        threshold: 0.05
-      }
-    );
-    sections.forEach(section => visibilityObserver.observe(section));
-
-    sections.forEach(s => s.style.transition = '');
-    indicator.style.transition = '';
+    requestAnimationFrame(() => {
+      observerReady = true;
+      sections.forEach(s => s.style.transition = '');
+      indicator.style.transition = '';
+      navLinks.forEach(link => link.style.transition = '');
+    });
   });
+
+  const visibilityObserver = new IntersectionObserver(
+    (entries) => {
+      if (!observerReady) return;
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          setActiveLink(entry.target.id);
+        }
+      });
+    },
+    {
+      root: content,
+      threshold: 0.05
+    }
+  );
+  sections.forEach(section => visibilityObserver.observe(section));
 
   // Persist scroll position on every scroll
   content.addEventListener('scroll', () => {
