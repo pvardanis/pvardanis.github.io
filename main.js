@@ -89,11 +89,23 @@ function initNav() {
   sections.forEach(s => s.style.transition = 'none');
   indicator.style.transition = 'none';
 
+  // Clear the hardcoded active class from HTML before any rendering
+  navLinks.forEach(link => link.classList.remove('active'));
+
   // Restore exact scroll position from previous session, or default to top
   const savedScroll = sessionStorage.getItem('scrollPos');
   if (savedScroll !== null) {
     sections.forEach(s => s.classList.add('visible'));
     content.scrollTop = parseInt(savedScroll, 10);
+    // Determine which section is visible at the restored position and activate it
+    const scrollTop = content.scrollTop;
+    let activeSection = sections[0];
+    sections.forEach(s => {
+      if (s.offsetTop <= scrollTop + content.clientHeight * 0.5) {
+        activeSection = s;
+      }
+    });
+    setActiveLink(activeSection.id);
   } else {
     if (navLinks[0]) {
       updateIndicator(navLinks[0]);
