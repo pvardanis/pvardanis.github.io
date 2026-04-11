@@ -103,17 +103,16 @@ function initNav() {
     });
   });
 
-  // Set initial state — restore from hash or default to first section
   // Suppress transitions on load so there's no visible flash
   sections.forEach(s => s.style.transition = 'none');
   indicator.style.transition = 'none';
 
-  const hash = window.location.hash.slice(1);
-  const hashTarget = hash && document.getElementById(hash);
-  if (hashTarget) {
-    hashTarget.classList.add('visible');
-    hashTarget.scrollIntoView();
-    setActiveLink(hash);
+  // Restore exact scroll position from previous session, or default to top
+  const savedScroll = sessionStorage.getItem('scrollPos');
+  if (savedScroll !== null) {
+    // Make all sections visible instantly so the restored position renders
+    sections.forEach(s => s.classList.add('visible'));
+    content.scrollTop = parseInt(savedScroll, 10);
   } else {
     if (navLinks[0]) {
       updateIndicator(navLinks[0]);
@@ -127,6 +126,11 @@ function initNav() {
   requestAnimationFrame(() => {
     sections.forEach(s => s.style.transition = '');
     indicator.style.transition = '';
+  });
+
+  // Persist scroll position on every scroll
+  content.addEventListener('scroll', () => {
+    sessionStorage.setItem('scrollPos', content.scrollTop);
   });
 }
 
