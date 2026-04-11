@@ -73,24 +73,6 @@ function initNav() {
     history.replaceState(null, '', '#' + id);
   }
 
-  // Observe sections for visibility (fade in/out) and active nav tracking
-  const visibilityObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          setActiveLink(entry.target.id);
-        }
-      });
-    },
-    {
-      root: content,
-      threshold: 0.05
-    }
-  );
-
-  sections.forEach(section => visibilityObserver.observe(section));
-
   // Click handling — smooth scroll within content container
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -110,7 +92,6 @@ function initNav() {
   // Restore exact scroll position from previous session, or default to top
   const savedScroll = sessionStorage.getItem('scrollPos');
   if (savedScroll !== null) {
-    // Make all sections visible instantly so the restored position renders
     sections.forEach(s => s.classList.add('visible'));
     content.scrollTop = parseInt(savedScroll, 10);
   } else {
@@ -122,8 +103,25 @@ function initNav() {
     }
   }
 
-  // Re-enable transitions after the initial paint
+  // Start observing sections only after scroll position is restored,
+  // so the observer doesn't flash the indicator to profile first
   requestAnimationFrame(() => {
+    const visibilityObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            setActiveLink(entry.target.id);
+          }
+        });
+      },
+      {
+        root: content,
+        threshold: 0.05
+      }
+    );
+    sections.forEach(section => visibilityObserver.observe(section));
+
     sections.forEach(s => s.style.transition = '');
     indicator.style.transition = '';
   });
