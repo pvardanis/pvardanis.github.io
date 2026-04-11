@@ -360,16 +360,6 @@ body {
   top: 30vh;
 }
 
-.job-tags .tag {
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.15s ease, transform 0.15s ease;
-}
-
-.job-tags.animate .tag {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* === Education === */
 .education-list {
@@ -473,8 +463,8 @@ a.edu-name:hover {
   letter-spacing: 2px;
   padding: 4px 10px;
   border: 1px solid;
-  color: rgba(192, 64, 255, 0.5);
-  border-color: rgba(180, 0, 255, 0.15);
+  color: rgba(210, 130, 255, 0.8);
+  border-color: rgba(200, 100, 255, 0.3);
 }
 
 .project-links {
