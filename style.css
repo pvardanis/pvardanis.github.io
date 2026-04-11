@@ -45,6 +45,8 @@ body {
   line-height: 1.3;
   color: #ffffff;
   text-shadow: 0 0 20px rgba(200, 100, 255, 0.2);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .sidebar-accent {

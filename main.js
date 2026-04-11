@@ -85,6 +85,15 @@ function initNav() {
     });
   });
 
+  // Sidebar name click — scroll to profile
+  const sidebarName = document.querySelector('.sidebar-name');
+  if (sidebarName) {
+    sidebarName.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('profile').scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
   // Suppress ALL transitions on load so there's no visible flash
   sections.forEach(s => s.style.transition = 'none');
   indicator.style.transition = 'none';
