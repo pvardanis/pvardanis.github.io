@@ -92,7 +92,7 @@
             <li>Built an automatic ONNX conversion mechanism that increased native ONNX model coverage on the Rust engine by 60%, achieving up to ~15x faster inference and lower resource consumption</li>
             <li>Contributed Python and Rust integration of hardware-accelerated inference <a href="https://wallaroo.ai/partners/intel/" target="_blank" rel="noopener">↗</a> for Ampere, Intel, and Qualcomm, achieving up to 10x speedup; benchmarked Qualcomm AI100 vs. NVIDIA across several serving stacks</li>
             <li>Maintained and enhanced a Rust-based model observability component for data drift monitoring on historical and scheduled future data</li>
-            <li>Implemented vLLM support as a framework in the ML library by architecting an async-engine-to-sync-server bridge for PyArrow Flight; collaborated with Qualcomm on their QAIC fork of vLLM; built the evaluation framework and ran benchmarks on the in-house Arrow Flight RPC server — ~1.5s latency / ~550 output tok/s at 4 QPS, ~12.5 output qps / ~1550 output tok/s at saturation for Llama 3.1 8B on a single NVIDIA H100</li>
+            <li>Implemented vLLM support as a framework in our product by architecting an async/sync bridge for Arrow Flight RPC; collaborated with Qualcomm on their QAIC vLLM fork; built the evaluation framework and ran benchmarks — ~1.5s latency / ~550 output tok/s at 4 QPS, ~1550 output tok/s saturation on Llama 3.1 8B / H100</li>
           </ul>
         </div>
         <div class="job-tags">
@@ -314,6 +314,10 @@
         <div class="skill-group">
           <div class="skill-label">Languages</div>
           <div class="skill-values">Python, Rust, Bash</div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Concurrency</div>
+          <div class="skill-values">asyncio, threading, multiprocessing</div>
         </div>
         <div class="skill-group">
           <div class="skill-label">ML Frameworks</div>
