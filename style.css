@@ -690,6 +690,26 @@ a.edu-name:hover {
   50% { opacity: 0.5; transform: scale(0.8); }
 }
 
+/* === Tablet / small desktop === */
+/* Below ~1100px, sidebar (280px) + fixed 340px tags column starve the bullet
+   text column (down to ~200px at 1024px, 0px at 800px). Stack the tags below
+   the bullets and trim section padding to give bullets full width. */
+@media (max-width: 1100px) {
+  .section {
+    padding: 60px 32px;
+  }
+
+  #experience .job {
+    flex-direction: column;
+  }
+
+  .job-tags {
+    width: auto;
+    margin-left: 28px;
+    position: static;
+  }
+}
+
 /* === Mobile === */
 @media (max-width: 768px) {
   .sidebar {
