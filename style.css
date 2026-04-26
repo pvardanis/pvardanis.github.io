@@ -691,10 +691,11 @@ a.edu-name:hover {
 }
 
 /* === Tablet / small desktop === */
-/* Below ~1100px, sidebar (280px) + fixed 340px tags column starve the bullet
-   text column (down to ~200px at 1024px, 0px at 800px). Stack the tags below
-   the bullets and trim section padding to give bullets full width. */
-@media (max-width: 1100px) {
+/* Below ~1280px, the fixed 280px sidebar + fixed 340px tags column squeeze
+   the bullet text column small enough that it becomes the narrowest of the
+   three (~370px at 1200px, ~200px at 1024px, 0px at 800px). Stack the tags
+   below the bullets and trim section padding to give bullets full width. */
+@media (max-width: 1280px) {
   .section {
     padding: 60px 32px;
   }
