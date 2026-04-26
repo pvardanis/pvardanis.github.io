@@ -342,12 +342,12 @@ body {
 }
 
 .job-bullets a {
-  color: inherit;
+  color: rgba(192, 128, 255, 0.85);
   text-decoration: none;
 }
 
 .job-bullets a:hover {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(192, 128, 255, 1);
 }
 
 .job-tags {
