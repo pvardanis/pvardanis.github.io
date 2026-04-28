@@ -483,10 +483,6 @@ a.edu-name:hover {
   color: rgba(255, 255, 255, 0.55);
 }
 
-.about-text + .about-text {
-  margin-top: 20px;
-}
-
 /* === Atmosphere === */
 .atmosphere {
   position: fixed;
