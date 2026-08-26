@@ -412,6 +412,7 @@ a.edu-name:hover {
 
 /* === Project === */
 .project-card {
+  margin-bottom: 32px;
   padding: 28px;
   border: 1px solid;
   border-color: rgba(180, 0, 255, 0.15);
