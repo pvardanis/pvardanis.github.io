@@ -456,10 +456,8 @@ a.edu-name:hover {
 
 .project-glimpse {
   display: block;
-  position: relative;
   margin-top: 20px;
-  border: 1px solid rgba(180, 0, 255, 0.2);
-  border-radius: 8px;
+  border: 1px solid rgba(180, 0, 255, 0.15);
   overflow: hidden;
   line-height: 0;
 }
@@ -472,38 +470,7 @@ a.edu-name:hover {
 }
 
 .project-glimpse:hover img {
-  transform: scale(1.03);
-}
-
-/* Play overlay (dalang) */
-.project-glimpse--video img {
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-
-.project-glimpse--video .play-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.25);
-  transition: background 0.3s ease;
-}
-
-.project-glimpse--video .play-overlay::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 18px 0 18px 30px;
-  border-color: transparent transparent transparent #ffffff;
-  margin-left: 6px;
-  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.6));
-}
-
-.project-glimpse--video:hover .play-overlay {
-  background: rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
 }
 
 .project-tags {
