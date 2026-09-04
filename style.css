@@ -454,6 +454,25 @@ a.edu-name:hover {
   margin-top: 16px;
 }
 
+.project-glimpse {
+  display: block;
+  margin-top: 20px;
+  border: 1px solid rgba(180, 0, 255, 0.15);
+  overflow: hidden;
+  line-height: 0;
+}
+
+.project-glimpse img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-glimpse:hover img {
+  transform: scale(1.02);
+}
+
 .project-tags {
   margin-top: 16px;
   display: flex;
