@@ -86,7 +86,7 @@
             <div class="job-desc">Self-directed engineering work on LLM inference tooling and software architecture</div>
           </div>
           <ul class="job-bullets">
-            <li>Building slipstream <a href="https://github.com/pvardanis/slipstream" target="_blank" rel="noopener">↗</a>, a self-hosted LLM inference platform on AWS EKS: open models on spot GPUs with autoscaling on inference signals, spot-eviction survival mid-stream, cold-start elimination on large weight loads, inference-aware routing, and prefill/decode disaggregation; fully provisioned via Terraform and benchmarked cost-competitive against commercial APIs on a live scoreboard</li>
+            <li>Building slipstream <a href="https://github.com/pvardanis/slipstream" target="_blank" rel="noopener">↗</a>, a self-hosted LLM inference platform on AWS EKS: open models on spot GPUs with autoscaling on inference signals, spot-eviction survival mid-stream, cold-start elimination on large weight loads, inference-aware routing, and prefill/decode disaggregation; fully provisioned via Terraform and benchmarked cost-competitive against commercial APIs on a live scoreboard, with an OpenTelemetry observability spine feeding Grafana fleet-health dashboards and SLO burn-rate / cost-drift alerts</li>
             <li>Building offgrid <a href="https://github.com/pvardanis/offgrid" target="_blank" rel="noopener">↗</a>, an open-source CLI/TUI that pairs any supported runtime with any coding agent and starts the two together in one command — LM Studio behind Claude Code or OpenCode, entirely on your own machine</li>
             <li>Completed the ArjanCodes <a href="https://www.arjancodes.com/courses/tsdm/" target="_blank" rel="noopener">Software Designer Mindset ↗</a> and <a href="https://arjancodes.com/courses/tsam/" target="_blank" rel="noopener">Software Architect Mindset ↗</a> tracks and the <a href="https://www.aihero.dev/workshops/ai-coding-crash-course" target="_blank" rel="noopener">AI Coding Crash Course ↗</a> by Matt Pocock</li>
           </ul>
@@ -98,6 +98,7 @@
           <span class="tag">AWS EKS</span>
           <span class="tag">Terraform</span>
           <span class="tag">vLLM</span>
+          <span class="tag">OpenTelemetry</span>
           <span class="tag">Software Architecture</span>
           <span class="tag">TDD</span>
         </div>
@@ -414,13 +415,16 @@
           model as the focus: autoscaling on inference signals, spot-eviction survival
           mid-stream, cold-start elimination on large weight loads, inference-aware routing,
           and prefill/decode disaggregation. Fully provisioned via Terraform and benchmarked
-          cost-competitive against commercial APIs on a live scoreboard.
+          cost-competitive against commercial APIs on a live scoreboard. An OpenTelemetry
+          spine feeds Grafana fleet-health dashboards and SLO burn-rate / cost-drift alerts.
         </p>
         <div class="project-tags">
           <span class="tag">Kubernetes</span>
           <span class="tag">AWS EKS</span>
           <span class="tag">Terraform</span>
           <span class="tag">vLLM</span>
+          <span class="tag">OpenTelemetry</span>
+          <span class="tag">Grafana</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/pvardanis/slipstream" target="_blank" rel="noopener" class="link-btn">GITHUB ↗</a>
