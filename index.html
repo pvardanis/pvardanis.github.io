@@ -86,7 +86,7 @@
             <div class="job-desc">Self-directed engineering work on LLM inference tooling and software architecture</div>
           </div>
           <ul class="job-bullets">
-            <li>Building slipstream <a href="https://github.com/pvardanis/slipstream" target="_blank" rel="noopener">↗</a>, a self-hosted LLM inference platform on Kubernetes (Amazon EKS): serving open models on spot GPUs with vLLM, GPU autoscaling on inference signals, spot-eviction survival, cold-start elimination, inference-aware request routing, and prefill/decode disaggregation. Provisioned with Terraform (infrastructure as code), benchmarked cost-competitive against commercial LLM APIs on a live scoreboard, with OpenTelemetry observability across Grafana, Sentry, and PostHog</li>
+            <li>Building slipstream <a href="https://github.com/pvardanis/slipstream" target="_blank" rel="noopener">↗</a>, a self-hosted LLM inference platform on Kubernetes (Amazon EKS): serving open models on spot GPUs with vLLM, GPU autoscaling on inference signals, spot-eviction survival, cold-start elimination, inference-aware request routing, and prefill/decode disaggregation. Provisioned with Terraform (infrastructure as code), benchmarked cost-competitive against commercial LLM APIs on a live scoreboard, with OpenTelemetry observability across Prometheus, Grafana, Sentry, and PostHog</li>
             <li>Building offgrid <a href="https://github.com/pvardanis/offgrid" target="_blank" rel="noopener">↗</a>, an open-source Python CLI/TUI for local LLM inference that pairs any supported runtime with any coding agent and starts the two together in one command — LM Studio behind Claude Code or OpenCode, running entirely on-device</li>
             <li>Completed the ArjanCodes <a href="https://www.arjancodes.com/courses/tsdm/" target="_blank" rel="noopener">Software Designer Mindset ↗</a> and <a href="https://arjancodes.com/courses/tsam/" target="_blank" rel="noopener">Software Architect Mindset ↗</a> tracks and the <a href="https://www.aihero.dev/workshops/ai-coding-crash-course" target="_blank" rel="noopener">AI Coding Crash Course ↗</a> by Matt Pocock</li>
           </ul>
@@ -380,7 +380,7 @@
         </div>
         <div class="skill-group">
           <div class="skill-label">Observability</div>
-          <div class="skill-values">OpenTelemetry, Grafana, Sentry, PostHog, data&nbsp;drift&nbsp;monitoring, alerting</div>
+          <div class="skill-values">OpenTelemetry, Prometheus, Grafana, Sentry, PostHog, data&nbsp;drift&nbsp;monitoring, alerting</div>
         </div>
         <div class="skill-group">
           <div class="skill-label">Experiment Tracking</div>
@@ -416,7 +416,7 @@
           mid-stream, cold-start elimination on large weight loads, inference-aware routing,
           and prefill/decode disaggregation. Fully provisioned via Terraform and benchmarked
           cost-competitive against commercial APIs on a live scoreboard. An OpenTelemetry
-          spine stamps one request-ID across a fan-out to Grafana (fleet health +
+          spine stamps one request-ID across a fan-out to Prometheus/Grafana (fleet health +
           SLO burn-rate / cost-drift alerts), Sentry, and PostHog.
         </p>
         <div class="project-tags">
@@ -425,6 +425,7 @@
           <span class="tag">Terraform</span>
           <span class="tag">vLLM</span>
           <span class="tag">OpenTelemetry</span>
+          <span class="tag">Prometheus</span>
           <span class="tag">Grafana</span>
           <span class="tag">Sentry</span>
           <span class="tag">PostHog</span>
