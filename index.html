@@ -411,12 +411,10 @@
           <div class="project-meta">Open source · 2026 — present · Terraform, Kubernetes, vLLM</div>
         </div>
         <p class="project-desc">
-          Open models served on spot GPUs, with the cluster-level machinery around the
-          model as the focus: autoscaling on inference signals, spot-eviction survival
-          mid-stream, cold-start elimination on large weight loads, inference-aware routing,
-          and prefill/decode disaggregation. Fully provisioned via Terraform. An OpenTelemetry
-          spine stamps one request-ID across a fan-out to Prometheus/Grafana (fleet health +
-          SLO burn-rate / cost-drift alerts), Sentry, and PostHog.
+          Open models on spot GPUs, and all the cluster machinery to keep them fast and
+          cheap: inference-signal autoscaling, spot-eviction survival, cold-start
+          elimination, inference-aware routing, prefill/decode split. Terraform-provisioned,
+          wired end-to-end with OpenTelemetry.
         </p>
         <div class="project-tags">
           <span class="tag">Kubernetes</span>
