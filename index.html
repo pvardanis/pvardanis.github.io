@@ -86,7 +86,7 @@
             <div class="job-desc">Self-directed engineering work on LLM inference tooling and software architecture</div>
           </div>
           <ul class="job-bullets">
-            <li>Building slipstream <a href="https://github.com/pvardanis/slipstream" target="_blank" rel="noopener">↗</a>, self-hosted LLM inference infrastructure on Kubernetes (Amazon EKS): serving and benchmarking open models on spot GPUs with vLLM, GPU autoscaling on inference signals, surviving spot-instance shutdowns mid-request, fast cold starts, load-aware routing, and splitting prefill from decode. Provisioned with Terraform (IaC), with OpenTelemetry observability across Prometheus, Grafana, Sentry, and PostHog</li>
+            <li>Building slipstream <a href="https://github.com/pvardanis/slipstream" target="_blank" rel="noopener">↗</a>, self-hosted LLM inference infrastructure on Kubernetes (Amazon EKS): serving and benchmarking open models on GPUs with vLLM, GPU autoscaling on inference signals, surviving instance shutdowns mid-request, fast cold starts, load-aware routing, and splitting prefill from decode. Provisioned with Terraform (IaC), with OpenTelemetry observability across Prometheus, Grafana, Sentry, and PostHog</li>
             <li>Building offgrid <a href="https://github.com/pvardanis/offgrid" target="_blank" rel="noopener">↗</a>, a Python CLI/TUI for local LLM inference. Pairs a runtime with a coding agent, configures and starts both in one command, running fully on-device</li>
             <li>Completed the ArjanCodes <a href="https://www.arjancodes.com/courses/tsdm/" target="_blank" rel="noopener">Software Designer Mindset ↗</a> and <a href="https://arjancodes.com/courses/tsam/" target="_blank" rel="noopener">Software Architect Mindset ↗</a> tracks and the <a href="https://www.aihero.dev/workshops/ai-coding-crash-course" target="_blank" rel="noopener">AI Coding Crash Course ↗</a> by Matt Pocock</li>
           </ul>
@@ -411,8 +411,8 @@
           <div class="project-meta">Open source · August 2026 — present · Terraform, Kubernetes, vLLM</div>
         </div>
         <p class="project-desc">
-          Open-model benchmarks on spot GPUs, and all the cluster machinery to keep them fast and
-          cheap: inference-signal autoscaling, spot-eviction survival, cold-start
+          Open-model benchmarks on GPUs, and all the cluster machinery to keep them fast and
+          cheap: inference-signal autoscaling, eviction survival, cold-start
           elimination, inference-aware routing, prefill/decode split. Terraform-provisioned,
           wired end-to-end with OpenTelemetry.
         </p>
